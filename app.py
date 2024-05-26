@@ -1,11 +1,9 @@
 from flask import Flask, jsonify, request, send_from_directory
 import os
 import functools
-
 app = Flask(__name__)
-
 # Your generated API key (store this securely in a real application)
-API_KEY = 'eHcx-c1bZ_QM-uTOzmgKmzDCBmhVgVJdZzAFSeKHuPI'
+API_KEY = 'your_api_key'
 
 # Sample data
 animals = {
