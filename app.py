@@ -1,7 +1,11 @@
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, request, send_from_directory
 import os
+import functools
 
 app = Flask(__name__)
+
+# Your generated API key (store this securely in a real application)
+API_KEY = 'eHcx-c1bZ_QM-uTOzmgKmzDCBmhVgVJdZzAFSeKHuPI'
 
 # Sample data
 animals = {
@@ -24,7 +28,18 @@ def get_description(file_path):
     except FileNotFoundError:
         return "Description not available."
 
+def require_api_key(view_function):
+    @functools.wraps(view_function)
+    def decorated_function(*args, **kwargs):
+        key = request.args.get('api_key')
+        if key and key == API_KEY:
+            return view_function(*args, **kwargs)
+        else:
+            return jsonify({"error": "Unauthorized"}), 401
+    return decorated_function
+
 @app.route('/api/animals', methods=['GET'])
+@require_api_key
 def get_animals():
     animals_with_descriptions = {}
     for animal, data in animals.items():
@@ -34,6 +49,7 @@ def get_animals():
     return jsonify(animals_with_descriptions)
 
 @app.route('/api/animals/<string:name>', methods=['GET'])
+@require_api_key
 def get_animal(name):
     animal = animals.get(name)
     if animal:
