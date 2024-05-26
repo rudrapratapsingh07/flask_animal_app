@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request, send_from_directory
 import os
 import functools
 app = Flask(__name__)
-# Your generated API key (store this securely in a real application)
+# Your generated API key 
 API_KEY = 'your_api_key'
 
 # Sample data
