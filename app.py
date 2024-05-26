@@ -8,12 +8,12 @@ animals = {
     "cow": {
         "image": "/static/images/cow.jpeg",
         "sound": "/static/sounds/cow.wav",
-        "description_file": "static/descriptions/cow.text"
+        "description_file": "/static/descriptions/cow.txt"
     },
     "horse": {
         "image": "/static/images/horse.jpeg",
         "sound": "/static/sounds/horse.wav",
-        "description_file": "static/descriptions/horse.text"
+        "description_file": "/static/descriptions/horse.txt"
     }
 }
 
