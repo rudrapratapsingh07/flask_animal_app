@@ -1,0 +1,1 @@
+Cow is a herbivorus animal. It produces milk which can be further conveted to cheese and butter.
