@@ -122,6 +122,11 @@ animals = {
         "sound": "/static/sounds/hippo.wav",
         "description_file": "/static/descriptions/hippo.txt"
     },
+    "hen": {
+        "image": "/static/images/hen.jpeg",
+        "sound": "/static/sounds/hen.wav",
+        "description_file": "/static/descriptions/hen.txt"
+    },
     "horse": {
         "image": "/static/images/horse.jpeg",
         "sound": "/static/sounds/horse.wav",
